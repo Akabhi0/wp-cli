@@ -76,7 +76,22 @@ fi
     #*********************Installing Sql-server**********************#
     #****************************************************************#  
 2)
-  echo "sql database"
+  war2 = `dpkg -s mysql-server | grep Status`
+
+  if [ $war == *Status* ]
+  then
+   echo "install"
+  else
+    echo "press 1>Install Mysql-server"
+    read sql1
+
+    if [ $sql1 -eq 1 ]
+    then
+      echo "write"
+    else
+      echo "you are doing on sence"
+    fi
+fi    
 ;;
     #************************Installing php**************************#
     #****************************************************************#    
