@@ -29,13 +29,11 @@ echo "status==> `sudo service nginx status` "
 
 #**********************************************************************************************#
 #**********************************************************************************************#
-
-
 war=`dpkg -s nginx | grep Status`
 
 if [[ "$war" == *Status* ]]
 then 
-   echo $war \n
+   echo $war 
    echo "Starting Nginx Server 1>YES 2>NO"
    read nginx2
 
@@ -84,8 +82,8 @@ else
     then
     #**************************Installation MYSQL*********************#
     #*****************************************************************#
-   
-    
+    `dpkg -s mysql-server | grep Status`
+     echo "i am best"
 
    else
      echo "Checking for SQL-SERVER"
